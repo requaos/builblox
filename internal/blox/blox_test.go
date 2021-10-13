@@ -1,10 +1,11 @@
 package blox_test
 
 import (
+	"testing"
+
 	"github.com/requaos/builblox/internal/blox"
 	"github.com/requaos/builblox/internal/class"
 	"github.com/stretchr/testify/require"
-	"testing"
 )
 
 func TestNew(t *testing.T) {
@@ -12,7 +13,7 @@ func TestNew(t *testing.T) {
 
 	b := blox.New(class.Fire)
 	require.NotNil(t, b)
-	require.Equal(t, class.Fire.String(), b.Class())
+	require.Equal(t, class.Fire.String(), b.String())
 	found := false
 	for name, count := range b.Contents() {
 		if name == class.Fire && count == 1 {
